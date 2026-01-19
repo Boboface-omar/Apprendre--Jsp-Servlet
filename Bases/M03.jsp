@@ -1,4 +1,4 @@
-Étape 3 : La Connexion (Servlet vers JSP)
+Étape 3 : La Connexion (Servlet vers JSP) 
 
 Le sigle JSP signifie JavaServer Pages. Comme nous l'avons vu, cette technologie est conçue pour mélanger du 
 HTML avec du code Java qui sera ensuite compilé par le serveur.

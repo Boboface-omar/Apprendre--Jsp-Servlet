@@ -1,5 +1,5 @@
 Étape 2 : La Servlet (Le Moteur)
-
+ 
 Une servlet est un programme Java qui tourne sur la machine où est installé le serveur JEE, en tant qu’ extension (des fonctionnalités) du serveur. 
 Elle reçoit une requête d’un client, effectue des traitements et lui renvoie le résultat
 Elle est invoquée lorsque le navigateur client appelle l’ URL associée à ce programme.

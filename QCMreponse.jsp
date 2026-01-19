@@ -36,3 +36,18 @@ Un conteneur Web (comme Apache Tomcat) est un moteur conçu pour gérer des comp
 Java spécifiques qui traitent les requêtes Web (HTTP).
 
 Le composant Java spécifique qui vit dans le conteneur et traite les requêtes s'appelle une Servlet.
+
+J2SE (Java Standard Edition) : C'est le cœur. Il fournit la base du langage, les bibliothèques essentielles 
+(comme les listes, les chaînes de caractères, les entrées/sorties) et la machine virtuelle (JVM). C'est le socle sur lequel tout repose.
+
+Le fournisseur de serveur (Server Provider) est l'éditeur qui fournit la plateforme (le logiciel) sur 
+laquelle l'application va tourner (ex: Oracle pour WebLogic, IBM pour WebSphere, Apache pour Tomcat).
+
+Une application web communique principalement via les protocoles HTTP ou HTTPS.
+FTP (File Transfer Protocol) sert au transfert de fichiers.
+SSH (Secure Shell) sert à l'administration de serveurs à distance (ligne de commande).
+
+Dans une application web JEE, les fichiers et dossiers privés sont dans le dossier WEB-INF.
+Ils ne sont pas accessibles directement par le navigateur pour des raisons de sécurité.
+Seuls les fichiers publics (HTML, CSS, JS, images) sont placés en dehors de WEB-INF.
+
