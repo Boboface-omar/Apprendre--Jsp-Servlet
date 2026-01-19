@@ -1,0 +1,12 @@
+<!-- La Configuration -->
+ <web-app>
+    <servlet>
+        <servlet-name>MaSuperServletLogin</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MaSuperServletLogin</servlet-name>
+        <url-pattern>/traitementConnexion</url-pattern>
+    </servlet-mapping>
+</web-app>
