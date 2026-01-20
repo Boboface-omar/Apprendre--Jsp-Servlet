@@ -36,3 +36,32 @@ String nomUtilisateur = (String) session.getAttribute("nomUtilisateur");
 </body>
 </html>```
 Ainsi, la session permet de conserver des informations sur l'utilisateur tout au long de sa navigation sur le site, facilitant une expérience utilisateur cohérente et personnalisée.
+
+Le serveur "oublie" instantanément qui est le client une fois la réponse envoyée. Si tu cliques sur une autre page une seconde plus tard, le serveur te considère comme un tout nouvel étranger.
+Pourquoi est-ce important pour ton cours JEE ? C'est précisément à cause de cette "perte de mémoire" du protocole HTTP que nous avons besoin des Sessions (HttpSession) et des Cookies pour garder un utilisateur connecté entre plusieurs pages.
+
+Les JSP (JavaServer Pages) disposent de 9 objets implicites créés automatiquement par le conteneur Web (tu n'as pas besoin de les déclarer avec new).
+Vrais objets implicites présents dans la liste :
+request : Représente la requête HTTP (paramètres, en-têtes).
+response : Représente la réponse HTTP à renvoyer.
+page : Représente l'instance de la servlet en cours d'exécution (l'équivalent de this en Java).
+
+Dans la spécification Java EE (JEE), le "descripteur de déploiement" est le fichier de configuration central d'une application Web.
+Son nom : Il doit obligatoirement s'appeler web.xml.
+Son emplacement : Il doit se trouver à l'intérieur du dossier WEB-INF.
+Son rôle : Il fait le lien entre les URL que tape l'utilisateur et les classes Java (Servlets) qui doivent répondre. C'est là qu'on définit les règles de sécurité, les sessions, etc.
+
+En JSP, pour manipuler des composants Java (JavaBeans), on utilise un ensemble de balises standard :
+<jsp:useBean ... /> : Pour créer ou récupérer une instance du bean.
+<jsp:setProperty ... /> : Pour modifier (initialiser) les valeurs des propriétés du bean. Cette balise appelle automatiquement la méthode "setter" correspondante dans la classe Java (par exemple setNom(...)).
+<jsp:getProperty ... /> : Pour lire la valeur d'une propriété.
+
+Le verbe "GET" signifie "Obtenir". Lorsque tu tapes une adresse dans la barre du navigateur et que tu appuies sur 
+Entrée, tu demandes au serveur de te fournir une ressource (une page HTML, une image, etc.).
+POST : Est utilisé généralement quand tu cliques sur le bouton "Valider" d'un formulaire (inscription, connexion) pour envoyer des données au serveur.
+PUT : Est utilisé pour mettre à jour ou créer une ressource (rarement utilisé directement par un navigateur standard).
+
+Une page JSP n'est pas exécutée directement telle quelle.
+Traduction : Le serveur (Tomcat) prend ton fichier .jsp (qui ressemble à du HTML) et le transforme en un fichier .java (qui est une Servlet).
+Compilation : Ce fichier Java est ensuite compilé en bytecode (.class).
+Exécution : C'est cette Servlet générée qui est exécutée pour répondre au client.

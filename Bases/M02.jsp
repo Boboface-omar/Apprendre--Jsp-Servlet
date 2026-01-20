@@ -40,3 +40,25 @@ public class SalutationServlet extends HttpServlet {
 }```
 Dans cet exemple, lorsque l'utilisateur accède à l'URL "/saluer?nom=Jean", la Servlet lit le paramètre "nom" et répond avec "Bonjour, Jean!".
 Après avoir lu les données de l'utilisateur, la Servlet peut interagir avec le Modèle (par exemple, en appelant des méthodes sur des JavaBeans pour traiter les données) avant de passer la main à la Vue (JSP) pour afficher le résultat final à l'utilisateur.
+
+Rôle : Une Servlet ne "génère" pas de requête. Elle reçoit une requête (du navigateur) et génère une réponse (souvent du HTML ou du JSON). C'est le client qui génère la requête.
+Protocole : Bien que l'on utilise principalement HttpServlet (pour le Web), 
+la spécification Java définit une classe GenericServlet qui est indépendante du protocole. 
+Théoriquement, une Servlet n'est donc pas limitée "seulement" au HTTP.
+
+Une Servlet est techniquement une classe Java (un fichier .java) qui est compilée (en .class) et exécutée par la Machine Virtuelle Java (JVM) côté serveur.
+
+La signature correcte est : protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+
+Les deux vrais packages de l'API Servlet sont :
+javax.servlet : Contient les classes génériques (indépendantes du protocole).
+javax.servlet.http : Contient les classes spécifiques au Web (HTTP).
+
+L'explication est simple : Les noms des méthodes dans une Servlet calquent directement les méthodes du protocole HTTP :
+Si le formulaire HTML a method="GET", le serveur appelle doGet().
+Si le formulaire HTML a method="POST", le serveur appelle doPost().
+
+Une servlet est invoquée lorsque le navigateur client appelle l’URL associée à ce programme.
+
+Le protocole HTTP Maintient la connexion entre le client et le serveur uniquement durant l'échange de la requête et de la réponse
+Le protocole HTTP est sans état (stateless) : chaque requête est indépendante. Le serveur ne conserve aucune information entre deux requêtes successives d'un même client.
